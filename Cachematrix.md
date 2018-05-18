@@ -1,5 +1,14 @@
 #Programming Assignment2
 
+## makeCacheMatrix & cacheSolve funtions work together to compute the inverse
+## of a matrix and caches the result for future and faster computation.
+
+
+## makeCacheMatrix takes a matrix as its input. It returns a list of objects comprising
+## of function values of set, get, setinv, and getinv. Here, Set sets the value of x,
+## get retrieves the value of x, setinv sets the value for the inverse of x and
+## getinv retrieves the value of the inverse of x.
+
 makeCacheMatrix <- function(x = matrix())
 {
        
@@ -15,6 +24,12 @@ makeCacheMatrix <- function(x = matrix())
         list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
+
+## cacheSolve reads the list returned by makeCacheMatrix & checks the necessary objects
+## to see if the inverse has already been calculated. In case it exists, the function returns an output as 
+## message notifying the user that the value has been cached previously and is being
+## retrieved. In case doesn't exist, the function calculates the inverse and then caches it for 
+## future use.
 
 cacheSolve <- function(x, ...) 
 {
